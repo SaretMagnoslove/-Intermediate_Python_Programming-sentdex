@@ -9,14 +9,20 @@ for name in names:
 print(', '.join(names))
 
 import os
-file_location = 'E:\\Courses\\youtube\\-Intermediate_Python_Programming-sentdex'
-file_name = 'example.txt'
+from pathlib import Path
 
-# # tempting
-# print(file_location + '\\' + file_name)
-# # right way
-# with open(os.path.join(file_location,file_name)) as f:
-#     print(f.read())
+file_location = Path("E:/test/test")
+file_name = file_location / "example.txt"
+
+# tempting
+print(file_location + '\\' + file_name)
+# right way
+with open(os.path.join(file_location, file_name)) as f:
+    print(f.read())
+
+# new way
+f = open(file_name)
+print(f.read())
 
 who = 'Londo'
 how_many = 12
